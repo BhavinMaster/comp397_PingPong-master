@@ -354,15 +354,16 @@ function update()
 		xSpeed = -xSpeed;
 		cpuScore.text = parseInt(cpuScore.text + 1);
 		if(parseInt(cpuScore.text) == 3){
-			cpuImg.src='Img/paddle2.png';
-			cpuImg.name = 'cpu';
-			cpuImg.onload = loadGfxx;
-			stage.removeChild(cpu);
+			
+			playerImg.src='Img/paddle2.png';
+			playerImg.name = 'player';
+			playerImg.onload = loadGfxx;
+			stage.removeChild(player);
 			function loadGfxx(e){
-			if(e.target.name = 'cpu'){cpu = new Bitmap(cpuImg);}
-			cpu.x = 480 - 25;
-			cpu.y = 160 - 37.5;
-			stage.addChild(cpu);
+			if(e.target.name = 'player'){player = new Bitmap(playerImg);}
+			player.x = 2;
+			player.y = 160 - 37.5;
+			stage.addChild(player);
 			}
 		}
 		reset();
@@ -376,15 +377,15 @@ function update()
 		xSpeed = -xSpeed;
 		playerScore.text = parseInt(playerScore.text + 1);
 		if(parseInt(playerScore.text) == 3){
-			playerImg.src='Img/paddle2.png';
-			playerImg.name = 'player';
-			playerImg.onload = loadGfxx;
-			stage.removeChild(player);
+			cpuImg.src='Img/paddle2.png';
+			cpuImg.name = 'cpu';
+			cpuImg.onload = loadGfxx;
+			stage.removeChild(cpu);
 			function loadGfxx(e){
-			if(e.target.name = 'player'){player = new Bitmap(playerImg);}
-			player.x = 2;
-			player.y = 160 - 37.5;
-			stage.addChild(player);
+			if(e.target.name = 'cpu'){cpu = new Bitmap(cpuImg);}
+			cpu.x = 480 - 25;
+			cpu.y = 160 - 37.5;
+			stage.addChild(cpu);
 			}
 		}
 		reset();
